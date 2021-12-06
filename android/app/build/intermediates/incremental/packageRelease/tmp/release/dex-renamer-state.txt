@@ -1,0 +1,4 @@
+#Thu Nov 11 13:53:28 ICT 2021
+base.0=D\:\\project79\\democicd\\reactinitapps\\AwesomeProject\\android\\app\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
