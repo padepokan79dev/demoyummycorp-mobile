@@ -48,6 +48,7 @@ jobs:
         target: "~/apps/mobile"
 
   install-apk-to-emu:
+    needs: deploy
     runs-on: ubuntu-latest
     steps:
     - name: executing remote ssh commands using ssh key
@@ -57,4 +58,4 @@ jobs:
         username: ${{ secrets.USERNAME_SERVER }}
         password: ${{ secrets.PASSWORD_SERVER }}
         port: 2121
-        script: sh ~/installapk.sh
+        script: sh ~/apps/installapk.sh
