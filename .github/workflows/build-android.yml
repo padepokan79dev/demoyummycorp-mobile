@@ -45,5 +45,5 @@ jobs:
         username: ${{ secrets.USERNAME_SERVER }}
         password: ${{ secrets.PASSWORD_SERVER }}
         port: 2121
-        source: app-release.apk
+        source: /home/runner/work/demoyummycorp-mobile/demoyummycorp-mobile/app-release.apk
         target: "~/apps/mobile"
