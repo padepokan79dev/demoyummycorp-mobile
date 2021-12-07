@@ -37,7 +37,6 @@ jobs:
       uses: actions/download-artifact@v1
       with:
         name: app-release.apk
-    - uses: actions/checkout@master
     - name: Copy File via SSH Password
       uses: appleboy/scp-action@master
       with:
