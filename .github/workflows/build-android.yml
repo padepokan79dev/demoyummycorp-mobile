@@ -46,3 +46,15 @@ jobs:
         port: 2121
         source: /home/runner/work/demoyummycorp-mobile/demoyummycorp-mobile/app-release.apk
         target: "~/apps/mobile"
+
+  install-apk-to-emu:
+    runs-on: ubuntu-latest
+    steps:
+    - name: executing remote ssh commands using ssh key
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST_SERVER }}
+        username: ${{ secrets.USERNAME_SERVER }}
+        password: ${{ secrets.PASSWORD_SERVER }}
+        port: 2121
+        script: sh ~/installapk.sh
