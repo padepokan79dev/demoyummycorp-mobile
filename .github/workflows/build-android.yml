@@ -28,3 +28,22 @@ jobs:
         with:
           name: app-release.apk
           path: android/app/build/outputs/apk/release/
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build-android
+    steps:
+    - name: Get artifact
+      uses: actions/download-artifact@v1
+      with:
+        name: app-release.apk
+    - uses: actions/checkout@master
+    - name: Copy File via SSH Password
+      uses: appleboy/scp-action@master
+      with:
+        host: ${{ secrets.HOST_SERVER }}
+        username: ${{ secrets.USERNAME_SERVER }}
+        password: ${{ secrets.PASSWORD_SERVER }}
+        port: 2121
+        source: app-release.apk
+        target: "~/apps/mobile"
