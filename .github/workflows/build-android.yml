@@ -68,7 +68,7 @@ jobs:
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.HOST_SERVER }}
-        username: ${{ secrets.HOST_SERVER }}
-        password: ${{ secrets.HOST_SERVER }}
+        username: ${{ secrets.USERNAME_SERVER }}
+        password: ${{ secrets.PASSWORD_SERVER }}
         port: 4345
         script: cd ~/appium-autotest && mvn clean test
