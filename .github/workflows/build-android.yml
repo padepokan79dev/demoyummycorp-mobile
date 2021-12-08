@@ -29,24 +29,6 @@ jobs:
           name: app-release.apk
           path: android/app/build/outputs/apk/release/
 
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build-android
-    steps:
-    - name: Get artifact
-      uses: actions/download-artifact@v1
-      with:
-        name: app-release.apk
-    - name: Copy File via SSH Password
-      uses: appleboy/scp-action@master
-      with:
-        host: ${{ secrets.HOST_SERVER }}
-        username: ${{ secrets.USERNAME_SERVER }}
-        password: ${{ secrets.PASSWORD_SERVER }}
-        port: 4345
-        source: /home/runner/work/demoyummycorp-mobile/demoyummycorp-mobile/app-release.apk
-        target: "~/apps-mobile"
-
   install-apk-to-emu:
     needs: deploy
     runs-on: ubuntu-latest
