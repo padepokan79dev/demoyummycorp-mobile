@@ -30,7 +30,7 @@ jobs:
           path: android/app/build/outputs/apk/release/
 
   install-apk-to-emu:
-    needs: deploy
+    needs: build-android
     runs-on: ubuntu-latest
     steps:
     - name: executing remote ssh commands using ssh key
