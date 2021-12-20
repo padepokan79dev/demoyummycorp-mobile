@@ -53,4 +53,4 @@ jobs:
         username: ${{ secrets.USERNAME_SERVER }}
         password: ${{ secrets.PASSWORD_SERVER }}
         port: 4345
-        script: cd ~/appium-autotest && mvn clean test
+        script: cd ~/appiumtestnew && mvn clean test
